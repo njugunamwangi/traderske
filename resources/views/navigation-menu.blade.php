@@ -71,6 +71,10 @@
                     </div>
                 @endif
 
+                <div class="text-sm">
+                    Kes 0.00
+                </div>
+
                 <!-- Settings Dropdown -->
                 <div class="ms-3 relative">
                     <x-dropdown align="right" width="48">
