@@ -4,3 +4,11 @@ models:
         parent_id: unsignedInteger nullable foreign:services.id
         softDeletes
 
+    Offer:
+        service_id: unsignedInteger
+        user_id: unsignedInteger
+        price: decimal:8,2
+        working_hours: json
+        relationships:
+            belongsTo: User, Service
+
