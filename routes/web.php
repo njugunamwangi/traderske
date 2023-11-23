@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\CreateOffer;
+use App\Livewire\Offer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +20,8 @@ Route::get('/', function () {
 });
 
 Route::view('/history', 'history')->name('history');
-Route::view('/offers', 'offers')->name('offers');
+Route::get('/offers', Offer::class)->name('offers');
+Route::get('/create-offer', CreateOffer::class)->name('create-offer');
 
 Route::middleware([
     'auth:sanctum',
