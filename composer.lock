@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe12ed11e957bf7a2623aa04c8448380",
+    "content-hash": "73f1ccd9f45f80a742eecb8c28a5916b",
     "packages": [
         {
             "name": "althinect/filament-spatie-roles-permissions",
@@ -8246,6 +8246,156 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "jasonmccreary/laravel-test-assertions",
+            "version": "v2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasonmccreary/laravel-test-assertions.git",
+                "reference": "77d1812dce4438c294e281acade9d52adf4ce0a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasonmccreary/laravel-test-assertions/zipball/77d1812dce4438c294e281acade9d52adf4ce0a0",
+                "reference": "77d1812dce4438c294e281acade9d52adf4ce0a0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/testing": "^9.0|^10.0",
+                "mockery/mockery": "^1.4.2",
+                "php": "^8.0",
+                "phpunit/phpunit": "^9.3.3|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JMac\\Testing\\AdditionalAssertionsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JMac\\Testing\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason McCreary",
+                    "email": "jason@pureconcepts.net"
+                }
+            ],
+            "description": "A set of helpful assertions when testing Laravel applications.",
+            "support": {
+                "issues": "https://github.com/jasonmccreary/laravel-test-assertions/issues",
+                "source": "https://github.com/jasonmccreary/laravel-test-assertions/tree/v2.3"
+            },
+            "time": "2023-03-15T16:29:35+00:00"
+        },
+        {
+            "name": "laravel-shift/blueprint",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/blueprint.git",
+                "reference": "ac893595167907cf5e6a1d0d3b7cf758d3891c98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/blueprint/zipball/ac893595167907cf5e6a1d0d3b7cf758d3891c98",
+                "reference": "ac893595167907cf5e6a1d0d3b7cf758d3891c98",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^3.3",
+                "illuminate/console": "^10.0",
+                "illuminate/filesystem": "^10.0",
+                "illuminate/support": "^10.0",
+                "laravel-shift/faker-registry": "^0.2.0",
+                "symfony/yaml": "^6.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.2",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^9.5.10"
+            },
+            "suggest": {
+                "jasonmccreary/laravel-test-assertions": "Required to use additional assertions in generated tests (^1.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Blueprint\\BlueprintServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Blueprint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An expressive, human readable code generation tool.",
+            "keywords": [
+                "code generation",
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-shift/blueprint/issues",
+                "source": "https://github.com/laravel-shift/blueprint/tree/v2.7.0"
+            },
+            "time": "2023-03-02T14:27:41+00:00"
+        },
+        {
+            "name": "laravel-shift/faker-registry",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/faker-registry.git",
+                "reference": "53ffca6b0b7e53f58f5d8999cae0298f7184e247"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/faker-registry/zipball/53ffca6b0b7e53f58f5d8999cae0298f7184e247",
+                "reference": "53ffca6b0b7e53f58f5d8999cae0298f7184e247",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shift\\Faker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason McCreary",
+                    "email": "jason@pureconcepts.net"
+                }
+            ],
+            "description": "A registry for generating Faker data from a name or data type.",
+            "support": {
+                "issues": "https://github.com/laravel-shift/faker-registry/issues",
+                "source": "https://github.com/laravel-shift/faker-registry/tree/v0.2.0"
+            },
+            "time": "2022-02-19T17:24:49+00:00"
         },
         {
             "name": "laravel/pint",
