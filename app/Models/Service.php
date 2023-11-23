@@ -19,7 +19,6 @@ class Service extends Model
     protected $fillable = [
         'service',
         'parent_id',
-        'user_id',
     ];
 
     /**
@@ -30,16 +29,10 @@ class Service extends Model
     protected $casts = [
         'id' => 'integer',
         'parent_id' => 'integer',
-        'user_id' => 'integer',
     ];
 
     public function parent(): BelongsTo
     {
         return $this->belongsTo(Service::class);
-    }
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 }

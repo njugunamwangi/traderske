@@ -2,6 +2,5 @@ models:
     Service:
         service: string
         parent_id: unsignedInteger nullable foreign:services.id
-        user_id: unsignedInteger foreign
         softDeletes
 
