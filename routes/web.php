@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('/history', 'history')->name('history');
-Route::view('/services', 'services')->name('services');
+Route::view('/offers', 'offers')->name('offers');
 
 Route::middleware([
     'auth:sanctum',
