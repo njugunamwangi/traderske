@@ -1,6 +1,11 @@
+created:
+    - database/factories/ServiceFactory.php
+    - database/migrations/2023_11_23_132233_create_services_table.php
+    - app/Models/Service.php
 models:
     Membership: { team_id: 'biginteger unsigned', user_id: 'biginteger unsigned', role: 'string nullable' }
     Role: { name: string, guard_name: string }
     Team: { user_id: 'biginteger unsigned', name: string, personal_team: boolean }
     TeamInvitation: { team_id: 'biginteger unsigned', email: string, role: 'string nullable' }
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, two_factor_secret: 'text nullable', two_factor_recovery_codes: 'text nullable', two_factor_confirmed_at: 'datetime nullable', remember_token: 'string:100 nullable', current_team_id: 'biginteger unsigned nullable', profile_photo_path: 'string:2048 nullable' }
+    Service: { service: string, parent_id: 'unsignedInteger nullable foreign:services.id', softdeletes: softDeletes }
