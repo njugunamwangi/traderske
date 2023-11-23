@@ -11,16 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->string('service');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('services', function (Blueprint $table) {
+            $table->unsignedInteger('parent_id')->nullable()->references('id')->on('services');
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::table('services', function (Blueprint $table) {
+            $table->dropColumn('parent_id');
+        });
     }
 };
