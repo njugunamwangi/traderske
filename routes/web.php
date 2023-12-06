@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use App\Livewire\CreateOffer;
 use App\Livewire\Offer;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 Route::view('/history', 'history')->name('history');
 Route::get('/offers', Offer::class)->name('offers');
 Route::get('/create-offer', CreateOffer::class)->name('create-offer');
+Route::get('/fund-account', [SiteController::class, 'fund_account'])->name('fund-account');
 
 Route::middleware([
     'auth:sanctum',

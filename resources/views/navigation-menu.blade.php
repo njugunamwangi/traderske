@@ -112,7 +112,7 @@
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
+                            <x-dropdown-link wire:navigate href="{{ route('fund-account') }}">
                                 {{ __('Fund Account') }}
                             </x-dropdown-link>
 

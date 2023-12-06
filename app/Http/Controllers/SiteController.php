@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    //
+    public function fund_account() {
+        return view('fund_account');
+    }
 }
