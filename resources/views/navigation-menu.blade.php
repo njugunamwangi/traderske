@@ -12,13 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" wire:navigate :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('history') }}" :active="request()->routeIs('history')">
+                    <x-nav-link href="{{ route('history') }}" wire:navigate :active="request()->routeIs('history')">
                         {{ __('History') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('offers') }}" :active="request()->routeIs('offers')">
+                    <x-nav-link href="{{ route('offers') }}" wire:navigate :active="request()->routeIs('offers')">
                         {{ __('Offers') }}
                     </x-nav-link>
                 </div>
@@ -108,7 +108,7 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
+                            <x-dropdown-link wire:navigate href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
