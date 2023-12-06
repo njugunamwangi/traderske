@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SiteController;
 use App\Livewire\CreateOffer;
 use App\Livewire\Offer;
@@ -24,6 +25,9 @@ Route::view('/history', 'history')->name('history');
 Route::get('/offers', Offer::class)->name('offers');
 Route::get('/create-offer', CreateOffer::class)->name('create-offer');
 Route::get('/fund-account', [SiteController::class, 'fund_account'])->name('fund-account');
+
+Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
 
 Route::middleware([
     'auth:sanctum',
