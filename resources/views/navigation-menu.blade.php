@@ -80,7 +80,7 @@
                 @endif
 
                 <div class="text-sm">
-                    Kes 0.00
+                    @livewire('account-balance')
                 </div>
 
                 <!-- Settings Dropdown -->
