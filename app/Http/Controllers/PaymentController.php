@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\AccountBalance;
 use Illuminate\Support\Facades\Redirect;
 use Unicodeveloper\Paystack\Facades\Paystack;
 
@@ -21,7 +22,11 @@ class PaymentController extends Controller
         try{
             return Paystack::getAuthorizationUrl()->redirectNow();
         }catch(\Exception $e) {
-            return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
+            return Redirect::back()
+                ->withMessage([
+                    'msg'=>'The paystack token has expired. Please refresh the page and try again.',
+                    'type'=>'error'
+                ]);
         }
     }
 
@@ -33,9 +38,24 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
-        // Now you have the payment details,
-        // you can store the authorization_code in your db to allow for recurrent subscriptions
-        // you can then redirect or do whatever you want
+        $data = $paymentDetails['data'];
+
+        if($data['status'] == 'success') {
+
+            $model = AccountBalance::query()
+                ->where('user_id', '=', auth()->user()->id)
+                ->first();
+
+            if(!$model) {
+                AccountBalance::create([
+                    'user_id' => auth()->user()->id,
+                    'amount' => $data['amount'] / 100
+                ]);
+            } else {
+                $model->increment('amount', $data['amount'] / 100);
+            }
+
+            return redirect()->to('history');
+        }
     }
 }
