@@ -13,8 +13,8 @@
                 <div class="space-y-12" style="margin-bottom:40px;">
                     <div class="col-md-8 col-md-offset-2">
 
-                    <input type="hidden" name="email" value="{{ auth()->user()->email }}">
-                        <input type="hidden" name="orderID" value="{{ rand(1000000, 9999999) }}">
+                    <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+                        <input type="hidden" name="orderID" value="345">
                         <input type="hidden" name="quantity" value="100">
                         <input type="hidden" name="currency" value="KES">
                         <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" >
@@ -30,6 +30,7 @@
                                         type="number"
                                         name="amount"
                                         id="amount"
+                                        value="amount"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
